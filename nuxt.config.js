@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - glever-cake',
-    title: 'glever-cake',
+    titleTemplate: '%s - Sweet Blessing',
+    title: 'Sweet Jesus',
     htmlAttrs: {
       lang: 'en'
     },
