@@ -31,32 +31,13 @@
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <!-- <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn> -->
-      <!-- <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn> -->
-      <!-- <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn> -->
       <!-- <v-spacer /> -->
-      <div class="logoBar">
+      <div class="logoBar ml-5">
         <v-img src="/logo.png"></v-img>
       </div>
       <!-- <v-toolbar-title v-text="title" /> -->
       <v-spacer />
-      <!-- <v-btn text>About Us</v-btn> -->
-      <v-btn text @click="contacto">Contact</v-btn>
+      <Carrito />
     </v-app-bar>
     <v-main class="greenColor">
       <!-- <v-container fluid> -->
@@ -116,7 +97,11 @@
 </template>
 
 <script>
+import Carrito from '@/components/tienda/carrito/Carrito'
 export default {
+  components: {
+    Carrito
+  },
   data () {
     return {
       clipped: false,

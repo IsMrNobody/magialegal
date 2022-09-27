@@ -1,39 +1,70 @@
  <template>
-  <v-card
-    class="mx-auto"
-    max-width="344"
-    outlined
-  >
-    <v-list-item three-line>
-      <v-list-item-content>
-        <div class="text-overline mb-4">
-          OVERLINE
-        </div>
-        <v-list-item-title class="text-h5 mb-1">
-          Headline 5
-        </v-list-item-title>
-        <v-list-item-subtitle>Greyhound divisely hello coldly fonwderfully</v-list-item-subtitle>
-      </v-list-item-content>
-
-      <v-list-item-avatar
-        tile
-        size="80"
-        color="grey"
-      ></v-list-item-avatar>
-    </v-list-item>
-
-    <!-- <v-card-actions>
-      <v-btn
-        outlined
-        rounded
-        text
-      >
-        Button
-      </v-btn>
-    </v-card-actions> -->
-  </v-card>
+  <v-row>
+    <v-col v-for="(p, i) in pro" :key="i" sm="5" md="4" lg="3" cols> 
+      <v-hover v-slot="{ hover }">
+        <v-card
+          class="mx-auto"
+          color="#B49C73"
+          max-width="600"
+          height="400"
+        >
+          <v-img
+            height="230"
+            :src="p.img"
+          >
+            <v-expand-transition>
+              <div
+                v-if="hover"
+                class="d-flex transition-fast-in-fast-out pink lighten-3 v-card--reveal text-h2 white--text"
+                style="height: 100%;"
+              >
+                ${{ p.price }}
+              </div>
+            </v-expand-transition>
+          </v-img>
+          <v-card-text
+            class="pt-6"
+            style="position: relative;"
+          >
+            <ProductDialog :producto="p" />
+            <h4 class="yellow--text text-h5 mb-2 mt-8">
+              {{ p.name }}
+            </h4>
+            <!-- <h3 class="text-h4 font-weight-light orange--text mb-2">
+              QW cooking utensils
+            </h3> -->
+            <div class="font-weight-light text-h6 mb-2 text-truncate">
+              {{ p.description }}
+            </div>
+          </v-card-text>
+        </v-card>
+      </v-hover>
+    </v-col> 
+  </v-row>
 </template>
 
 <script>
-  export default {}
+import ProductDialog from '@/components/tienda/ProductDialog'
+  export default {
+    components: {
+      ProductDialog
+    },
+    props: {
+      pro: {
+       type: Array,
+       default: () => {}
+      }
+    }
+  }
 </script>
+
+<style>
+.v-card--reveal {
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  opacity: .5;
+  position: absolute;
+  width: 100%;
+}
+</style>

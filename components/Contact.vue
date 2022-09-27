@@ -26,7 +26,7 @@
             <v-text-field
               v-model="form.first"
               :rules="rules.name"
-              color="pink"
+              color="primary"
               label="Name"
               required
             ></v-text-field>
@@ -38,7 +38,7 @@
             <v-text-field
               v-model="form.last"
               :rules="rules.name"
-              color="pink"
+              color="primary"
               label="Email"
               required
             ></v-text-field>
@@ -46,7 +46,7 @@
           <v-col cols="12">
             <v-textarea
               v-model="form.bio"
-              color="pink"
+              color="primary"
             >
               <template #label>
                 <div>

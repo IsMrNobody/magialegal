@@ -10,7 +10,7 @@
         width="500"
         src="https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2Ftorta02.png?alt=media&token=dad75be6-d73b-4a61-ab54-6898a8319b2b">
       </v-img>
-      <v-btn outlined class="mt-5" color="pink lighten-3">Ver mas!</v-btn>
+      <v-btn outlined class="mt-5" color="pink lighten-3">See more!</v-btn>
     </div>
 </template>
 

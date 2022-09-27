@@ -4,7 +4,7 @@
       <v-card class="fix transparent" flat>
         <!-- <h1>The Taste of Your Celebrations</h1> -->
         <img width="90%" src="/logo.png" alt="">
-        <h2 class="beihgColor spaci">{{ subtitle }}</h2>
+        <h2 class="beihgColor spaci">{{ merchant.name }}</h2>
         <v-btn color="#EAAC9D" class="mt-5">See More</v-btn>
       </v-card>
     </v-img>
@@ -42,7 +42,6 @@
 export default {
   data() {
     return {
-      subtitle: 'Sweet Blessing',
       cards: [
         {
           title: 'Cakes',
@@ -61,12 +60,16 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    merchant() {
+      return this.$store.state.merchant
+    }
+  },
+  created() {
+    this.$store.dispatch('setMerchant')
+    this.$store.dispatch('setProducts')
   }
-  // computed: {
-  //   subtitle() {
-  //     return this.$store.state.subtitle
-  //   },
-  // }
 }
 </script>
 

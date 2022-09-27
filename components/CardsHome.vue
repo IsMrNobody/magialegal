@@ -50,7 +50,7 @@
   export default {
     props: {
       cards: {
-       type: String,
+       type: Object,
        default: () => {}
       }
     },
