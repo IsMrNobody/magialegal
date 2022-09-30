@@ -101,17 +101,19 @@ export const actions = {
   setPayment({ commit }, i) {
     commit('setPayment', i)
   },
-  async sendOrder({ commit, state }, form) {
+  async sendOrder({ commit, state, rootState }, form) {
     try {
       const pedido = {
         products: state.items,
         paymentMethod: state.selectedPayment,
         deliveryDate: state.date,
         total: state.total,
+        merchantId: rootState.merchant._id,
+        merchantPhone: rootState.merchant.phone,
         ...form
       }
       const order = await sendOrder(pedido)
-      console.log(order)
+      // console.log(pedido)
       if (order.data.email) {
         commit('verConfirm')
         commit('setOrderId', order.data._id)
