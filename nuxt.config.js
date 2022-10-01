@@ -14,7 +14,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'Sweet Jesus', content: 'Sweet Blessing' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -25,6 +25,13 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
+
+  manifest: {
+    name: 'Sweet Jesus',
+    short_name: 'Sweet',
+    background_color: '#565D47',
+    theme_color: '#EAAC9D'
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
