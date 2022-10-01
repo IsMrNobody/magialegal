@@ -5,7 +5,7 @@
         <!-- <h1>The Taste of Your Celebrations</h1> -->
         <img width="90%" src="/logo.png" alt="">
         <h2 class="beihgColor spaci">{{ merchant.name }}</h2>
-        <v-btn color="#EAAC9D" class="mt-5">See More</v-btn>
+        <v-btn color="#EAAC9D" to="/store" class="mt-5">See More</v-btn>
       </v-card>
     </v-img>
     <v-container>

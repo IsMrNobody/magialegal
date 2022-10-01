@@ -58,6 +58,8 @@ export default {
       themes: {
         dark: {
           primary: '#EAAC9D',
+          beige: '#F0DAA4',
+          marron: '#B49C73',
           accent: colors.grey.darken3,
           secondary: '#565D47',
           info: colors.teal.lighten1,

@@ -33,6 +33,7 @@
                 ref="phone"
                 v-model="phone"
                 :rules="phoneRules"
+                type="Number"
                 outlined
                 placeholder="Phone"
                 required
@@ -164,6 +165,7 @@ export default {
       phone: '',
       phoneRules: [
         v => !!v || 'Phone is required',
+        v => (v && v.length === 12) || 'Name must be less than 12 characters',
       ],
       address: '', 
       email: '',

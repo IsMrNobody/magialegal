@@ -7,6 +7,7 @@ export const state = () => ({
 export const mutations = {
   setMerchant( state, data ) {
     state.merchant = data
+    localStorage.setItem('merchantId', data._id)
   }
 }
 

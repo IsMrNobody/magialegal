@@ -52,6 +52,9 @@
         date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
       }
     },
+    created() {
+      this.setDate()
+    },
     methods: {
       setDate() {
         this.$store.commit('carrito/setDate', this.date)
