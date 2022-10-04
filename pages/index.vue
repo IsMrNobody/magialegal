@@ -4,7 +4,7 @@
       <v-card class="fix transparent" flat>
         <!-- <h1>The Taste of Your Celebrations</h1> -->
         <img width="90%" src="/logo.png" alt="">
-        <h2 class="beihgColor spaci">{{ merchant.name }}</h2>
+        <h2 class="beige--text spaci">{{ merchant.name }}</h2>
         <v-btn color="#EAAC9D" to="/store" class="mt-5">See More</v-btn>
       </v-card>
     </v-img>
@@ -14,21 +14,22 @@
             <h2 class="siz">Custom-made Cake</h2>
             <p class="display-1">Guests of your holiday will be delighted</p>
           </v-card>
-        <v-row>
-          <v-col v-for="(card, i) in cards" :key="i" class="ma-2">
+        <v-row justify="center">
+          <v-col v-for="(card, i) in cards" :key="i" class="" sm="4" cols>
             <CardsHome :cards="card" />
           </v-col>
         </v-row>
       </div>
     </v-container>
       <ParallaxHome class="parallax" />
-    <v-container>
-      <v-row>
-        <BannerHome class="banner" />
-      </v-row>
+    <v-container fluid>
+      <div>
+        <BannerHome class="mb-12" />
+      </div>
       <v-row justify="center" class="contacto">
-        <v-col class="my-auto" sm="4">
+        <v-col class="my-auto mt-5" sm="5">
           <v-img
+            width=""
             src="https://img.freepik.com/free-photo/frame-food-ingredients-baking-gently-pink-pastel-background-cooking-flat-lay-with-copy-space-top-view-baking-concept-flat-lay_127032-2200.jpg?w=2000">
           </v-img>
         </v-col>
@@ -82,7 +83,7 @@ export default {
   text-transform: uppercase;
 }
 .pad {
-  padding-top: 80px;
+  padding-top: 40px;
   padding-bottom: 120px;
 }
 .parallax {
@@ -90,7 +91,6 @@ export default {
   padding-bottom: 120px;
 }
 .contacto {
-  padding-top: 150px;
   padding-bottom: 80px;
 }
 h1 {
@@ -100,15 +100,17 @@ p {
   size: 18px;
 }
 .banner {
-  padding-bottom: 120px;
+  padding-bottom: 60px;
   padding-top: 40px;
   height: 80vh;
   width: 100vw;
 }
 .siz {
-  font-size: 40px;
+  font-size: 35px;
+  text-transform: uppercase;
 }
 .spaci {
+  
   letter-spacing: 18px;
 }
 </style>

@@ -1,12 +1,19 @@
 <template>
-  <div v-if="param">
-    <h1>Pago completado, Gracias por tu compra</h1>
-    <p>ID compra: {{ param }}</p>
+  <div>
+    <v-col class="text-center marron">
+      Thank you for your purchase! Your order is being processed
+    </v-col>
+    <OrderForm /> 
   </div>
 </template>
 
 <script>
+import OrderForm from '@/components/paid/OrderForm'
 export default {
+  components: {
+    OrderForm
+  },
+  layout: 'paid',
   computed: {
     param() {
       return this.$route.params.id

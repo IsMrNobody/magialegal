@@ -115,7 +115,13 @@ export const actions = {
       const order = await sendOrder(pedido)
       // console.log(pedido)
       if (order.data.email) {
-        commit('verConfirm')
+        if (pedido.paymentMethod === 'Cash') {
+          this.$router.push(`/paid/${order.data._id}`)
+          commit('setDialog', false)
+        } else {
+          await commit('verConfirm')
+        }
+        commit('resetCar')
         commit('setOrderId', order.data._id)
         success.fire({title: 'Order Send', timer: 3000, position: 'center'})
       } else {

@@ -10,7 +10,7 @@
           Total order:
         </v-card-subtitle>
         <h2>
-          $ {{ total }}
+          $ {{ totalOrder }}
         </h2>
       </v-card-actions>
       <v-card-actions>
@@ -22,7 +22,7 @@
           <p class="mx-auto my-auto mt-2 mb-2 secondary--text">!Thank you for your purchase, <br /> we will contact you soon!</p>
         </v-row>
       </v-card-actions>
-      <v-col v-show="paymentSelet === 'Cash'">
+      <v-col>
         <v-btn class="mt-5" small text @click="closeDialog">back to shop</v-btn>
       </v-col>
     </v-card>
@@ -44,6 +44,9 @@ export default {
   computed: {
     paymentSelet() {
       return this.$store.state.carrito.selectedPayment
+    },
+    totalOrder() {
+      return this.$store.state.carrito.total
     }
   },
   methods: {

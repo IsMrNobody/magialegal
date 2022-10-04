@@ -30,6 +30,8 @@
                     </v-card-title>
                     <v-card-subtitle class="subheading font-weight-bold">
                         {{ item.email }}
+                        <br>
+                        ID: {{ item._id }}
                     </v-card-subtitle>
                     <v-card-actions class="subheading font-weight-bold">
                         <v-btn class="mr-3" small icon @click="copy(item.phone)">
@@ -37,8 +39,8 @@
                             mdi-whatsapp
                           </v-icon>
                         </v-btn>
-                        <!-- <v-spacer></v-spacer> -->
                         +{{ item.phone }}
+                        <v-spacer></v-spacer>                        
                     </v-card-actions>            
 
                     <v-divider></v-divider>

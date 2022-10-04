@@ -39,6 +39,15 @@ export const getOrders = async (id) => {
   }
 }
 
+export const getOrderById = async (id) => {
+  try {
+    const respuesta = await axios.get(`${SWEET_API_URL}/order/user/${id}`)
+    return respuesta.data
+  } catch (error) {
+    return error
+  }
+}
+
 export const paypal = async (data) => {
   try {
     const respuesta = await axios.post(`${SWEET_API_URL}/payment/create-order`, data)

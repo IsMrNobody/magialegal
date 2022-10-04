@@ -33,6 +33,7 @@
                 ref="phone"
                 v-model="phone"
                 :rules="phoneRules"
+                label="Add area code"
                 type="Number"
                 outlined
                 placeholder="Phone"
@@ -165,7 +166,7 @@ export default {
       phone: '',
       phoneRules: [
         v => !!v || 'Phone is required',
-        v => (v && v.length === 12) || 'Name must be less than 12 characters',
+        // v => (v && v.length === 12) || 'Name must be less than 12 characters',
       ],
       address: '', 
       email: '',

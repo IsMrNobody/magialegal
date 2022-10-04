@@ -24,7 +24,7 @@
       </template>
       <v-container>
         <v-col>
-          <v-card flat>
+          <v-card flat max-width="600" class="mx-auto">
             <v-toolbar
               dark
               color="#565D47"
@@ -49,17 +49,28 @@
               </v-toolbar-items> -->
             </v-toolbar>
             <v-container>
-                <v-row>
-                  <v-col sm="4">
-                    <v-card height="400" width="300" flat class="mx-auto">
+                <v-row justify="center">                  
+                  <v-col sm="8" cols>
+                    <v-card height="200" width="100vw" flat class="mx-auto">
                       <v-img height="100%" :src="producto.img"></v-img>
                     </v-card>
-                    <v-card-text>
-                      <h4 class="grey--text">Ingredients:</h4>
-                      <p class="grey--text">{{ producto.ingredients }}</p>
-                    </v-card-text>
-                  </v-col>
-                  <v-col sm="8" cols>
+                    <v-card-actions class="mt-5">
+                      <p class="display-1">
+                        <span class="white--text">
+                          $ {{ total }}
+                        </span>
+                      </p>
+                      <v-spacer></v-spacer>
+                      <v-btn
+                        outlined
+                        x-large
+                        color="#EAAC9D"
+                        @click="addCart()"
+                      >
+                        Add to
+                        <v-icon>mdi-cart</v-icon>
+                      </v-btn>
+                    </v-card-actions>
                     <v-card-title>{{ producto.name }}</v-card-title>
                     <v-card-subtitle>{{ producto.category }}</v-card-subtitle>
                     <v-card-text>
@@ -82,16 +93,15 @@
                         </v-chip>
                       </v-chip-group>
                       <p class="subtitle-2 grey--text">{{ chipInfo.description }}</p>
-                      <p class="display-1"><span class="white--text">$ {{ total }}</span></p>
                       <!-- <h4>Ingredients:</h4>
                       <p class="grey--text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat quidem architecto illum suscipit aut culpa provident facere reprehenderit deleniti iure corporis distinctio ratione rem, nisi, rerum laboriosam repudiandae optio nemo.</p> -->
-                      <v-card-actions>
-                        <v-spacer class="d-flex d-sm-none"></v-spacer>
-                        <v-btn outlined x-large color="#EAAC9D" class="mt-8" @click="addCart()">Add to
-                          <v-icon>mdi-cart</v-icon>
-                        </v-btn>
-                      </v-card-actions>
                     </v-card-text>
+                    <v-col>
+                      <v-card-text>
+                        <h4 class="grey--text">Ingredients:</h4>
+                        <p class="grey--text">{{ producto.ingredients }}</p>
+                      </v-card-text>
+                    </v-col>
                   </v-col>
                 </v-row>
             </v-container>

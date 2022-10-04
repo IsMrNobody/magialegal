@@ -34,25 +34,12 @@
             >
               <v-icon>mdi-close</v-icon>
             </v-btn>
-            <!-- <v-toolbar-title>{{ producto.name + ' ' + chipInfo.title}}</v-toolbar-title> -->
             <v-spacer></v-spacer>
-            <!-- <v-toolbar-items>
-            <v-btn
-                color="#EAAC9D"
-                dark
-                @click="dialog = false"
-            >
-                Add to Car
-            </v-btn>
-            </v-toolbar-items> -->
         </v-toolbar>
         <v-container>
           <v-row>
             <v-col>
               <v-btn v-show="verForm" text large light color="primary" @click="seeCar()">
-                <v-icon>mdi-arrow-left</v-icon>
-              </v-btn>
-              <v-btn v-show="!verForm && !verCarro" text large light color="primary" @click="seeForm()">
                 <v-icon>mdi-arrow-left</v-icon>
               </v-btn>
             </v-col>
@@ -61,16 +48,17 @@
           <v-card v-if="verCarro" class="overflow-auto" max-height="70vh" flat>
             <v-col>
               <v-row v-for="(car, i) in carrito" :key="i">
-                <v-col sm="2" cols>
-                  <v-card width="100%" height="150" elevation="10">
+                <v-col sm="3" cols>
+                  <v-card width="auto" height="300" elevation="10">
                     <v-img height="100%" :src="car.img"></v-img>
                   </v-card>
                 </v-col>
                 <v-col class="my-auto" sm="3" cols>
-                  <p class="grey--text">{{ car.name }}</p>
-                  <span>{{ car.selectedPortion.title }}</span>
+                  <p class="grey--text">{{ car.name }}
+                    <span>/ {{ car.selectedPortion.title }}</span>
+                  </p>
                 </v-col>
-                <v-col class="my-auto" sm="3">
+                <v-col class="my-auto" sm="3" cols="6">
                   <v-row justify="space-around">
                     <v-btn @click="restar(i)">
                       -
@@ -81,8 +69,9 @@
                     </v-btn>
                   </v-row>
                 </v-col>
+                <v-spacer></v-spacer>
                 <v-col class="my-auto text-center">
-                    <p class="text-h5">$ {{ car.totalProduct.toFixed(2) }}</p>
+                  <p class="text-h6">$ {{ car.totalProduct.toFixed(2) }}</p>
                 </v-col>
               </v-row>
             </v-col>

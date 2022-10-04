@@ -1,15 +1,21 @@
  <template>
   <v-row>
-    <v-col v-for="(p, i) in pro" :key="i" sm="5" md="4" lg="3" cols> 
+    <v-col
+      v-for="(p, i) in pro"
+      :key="i"
+      sm="5"
+      md="4"
+      lg="3"
+      cols="6"
+    > 
       <v-hover v-slot="{ hover }">
         <v-card
-          class="mx-auto"
           color="#B49C73"
           max-width="600"
-          height="400"
+          height="280"
         >
           <v-img
-            height="230"
+            height="155"
             :src="p.img"
           >
             <v-expand-transition>
@@ -23,11 +29,11 @@
             </v-expand-transition>
           </v-img>
           <v-card-text
-            class="pt-6"
+            class="pt-5"
             style="position: relative;"
           >
             <ProductDialog :producto="p" />
-            <h4 class="yellow--text text-h5 mb-2 mt-8">
+            <h4 class="yellow--text text-h5 mb-2 mt-12 text-truncate">
               {{ p.name }}
             </h4>
             <!-- <h3 class="text-h4 font-weight-light orange--text mb-2">

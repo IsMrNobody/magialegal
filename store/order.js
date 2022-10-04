@@ -1,12 +1,16 @@
-import { getOrders } from "../plugins/sweetApi"
+import { getOrders, getOrderById } from "../plugins/sweetApi"
 
 export const state = () => ({
-  orders: []
+  orders: [],
+  factura: {}
 })
 
 export const mutations = {
   setOrders( state, data ) {
     state.orders = data
+  },
+  setOrder( state, data ) {
+    state.factura = data
   }
 }
 
@@ -14,7 +18,10 @@ export const actions = {
   async getOrders({ commit, rootState }) {
     const id = rootState.merchant._id
     const data = await getOrders(id)
-    // console.log(data);
     commit('setOrders', data.reverse())
+  },
+  async getOrderById({ commit }, id) {
+    const data = await getOrderById(id)
+    commit('setOrder', data)
   }
 }
