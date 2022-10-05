@@ -116,7 +116,7 @@ export const actions = {
       // console.log(pedido)
       if (order.data.email) {
         if (pedido.paymentMethod === 'Cash') {
-          this.$router.push(`/paid/${order.data._id}`)
+          await this.$router.push(`/paid/${order.data._id}`)
           commit('setDialog', false)
         } else {
           await commit('verConfirm')

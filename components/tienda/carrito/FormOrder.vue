@@ -190,7 +190,7 @@ export default {
        floor: this.floor,
        comments: this.comment,
       }
-      if (data.email && data.phone && data.nameUser) {        
+      if (data.email && data.phone && data.nameUser) {    
         this.$store.dispatch('carrito/sendOrder', data)
       } else {
         alert('Debes rellenar todos los campos')

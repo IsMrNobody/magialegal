@@ -69,7 +69,7 @@ export default {
   },
   created() {
     this.$store.dispatch('setMerchant')
-    this.$store.dispatch('setProducts')
+    // this.$store.dispatch('setProducts')
   }
 }
 </script>

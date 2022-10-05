@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const SWEET_API_URL = process.env.SWEET_API_URL || 'https://sweet-blessing.herokuapp.com'
-const USER_ID = '631e54b1547de751de13c089'
+const USER_ID = process.env.USER_ID || '631e54b1547de751de13c089'
 
 export const restaurante = async () => {
   try {
@@ -52,6 +52,15 @@ export const paypal = async (data) => {
   try {
     const respuesta = await axios.post(`${SWEET_API_URL}/payment/create-order`, data)
     return respuesta.data
+  } catch (error) {
+    return error
+  }
+}
+
+export const sendComment = async (payload) => {
+  try {
+    const respuesta = await axios.post(`${SWEET_API_URL}/order/contact`, payload)
+    return respuesta
   } catch (error) {
     return error
   }
