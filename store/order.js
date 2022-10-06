@@ -25,8 +25,13 @@ export const actions = {
     commit('setOrders', data.reverse())
   },
   async getOrderById({ commit }, id) {
-    const data = await getOrderById(id)
-    commit('setOrder', data)
+    try {
+      const data = await getOrderById(id)
+      if (!data._id) throw new Error(data)
+      commit('setOrder', data)
+    } catch (error) {
+      this.$router.push('/')
+    }
   },
   async sendMsg(_ctx, data) {
     await sendComment(data)

@@ -3,7 +3,8 @@ import { productos } from "../plugins/sweetApi"
 export const state = () => ({
     products: [],
     filterProducts: [],
-    categories: []
+    categories: [],
+    filterByCat: []
 })
 
 export const mutations = {
@@ -12,6 +13,10 @@ export const mutations = {
   },
   setByCat( state, data ) {
     state.filterProducts = data
+    state.filterByCat = data
+  },
+  filterCat( state, id ) {
+    state.filterByCat = state.filterProducts.filter(pro => pro.category === id)
   },
   setCateg( state, data ) {
     state.categories = data

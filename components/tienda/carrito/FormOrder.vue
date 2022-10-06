@@ -126,6 +126,7 @@
         <v-btn
           type="submit"
           outlined
+          :loading="load"
           ripple
           :disabled="!valid"
           large
@@ -176,11 +177,13 @@ export default {
       ],
       house: '',
       floor: '',
-      valid: false
+      valid: false,
+      load: false
     }
   },
   methods: {
     sendOrder() {
+      this.load = true
       const data = {
        nameUser: this.name,
        phone: this.phone,
@@ -194,6 +197,7 @@ export default {
         this.$store.dispatch('carrito/sendOrder', data)
       } else {
         alert('Debes rellenar todos los campos')
+        this.load = false
       }
     }
   }

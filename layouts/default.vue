@@ -147,7 +147,10 @@ export default {
   },
   methods: {
     contacto() {
-      window.location.href = "#contacta";
+      // window.location.href = "#contacta";
+        document.getElementById('contacta').scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   },
 }

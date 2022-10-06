@@ -98,14 +98,16 @@
 
     methods: {
       async submit () {
-        this.snackbar = true
         const data = {
           userName: this.name,
           email: this.email,
           comment: this.message,
           merchantPhone: this.merchant.phone
         }
-        await this.$store.dispatch('order/sendMsg', data)
+        if (data.email &&  data.email) {
+          this.snackbar = true
+          await this.$store.dispatch('order/sendMsg', data)
+        }
         this.snackbar = false
         this.name = ''
         this.email = ''

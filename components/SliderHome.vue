@@ -12,7 +12,7 @@
         :key="i"
       >
         <v-card
-          class="mx-auto"
+          class="mx-auto pa-2 marron"
           height="350"
           width="250"
         >
