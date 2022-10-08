@@ -27,11 +27,21 @@ export default {
   css: [
   ],
 
+  loading: { color: '#EAAC9D' },
+
   manifest: {
     name: 'Sweet Jesus',
     short_name: 'Sweet',
     background_color: '#565D47',
-    theme_color: '#EAAC9D'
+    theme_color: '#EAAC9D',
+    display: "fullscreen",
+    icons: [
+      {
+        "src": "/logo2.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
