@@ -2,7 +2,8 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+  ssr: true,
+  target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -54,10 +55,14 @@ export default {
     '@nuxtjs/axios',
   ],
 
+  // env: {
+  //   SWEET_API_URL: 'https://sweet-blessing.herokuapp.com',
+  //   USER_ID: '631e54b1547de751de13c089'
+  // },
   env: {
     SWEET_API_URL: process.env.SWEET_API_URL,
     USER_ID: process.env.USER_ID
-  },
+  },  
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
