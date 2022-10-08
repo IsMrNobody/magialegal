@@ -37,9 +37,14 @@ export default {
     display: "fullscreen",
     icons: [
       {
-        "src": "/logo2.png",
+        "src": "/logoS-512x512.png",
         "type": "image/png",
         "sizes": "512x512"
+      },
+      {
+        "src": "/logoS-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
       }
     ],
   },
