@@ -16,7 +16,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'Sweet Jesus', content: 'Sweet Blessing' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'sweet-blessing' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -53,6 +53,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/pwa'
   ],
 
   // env: {
