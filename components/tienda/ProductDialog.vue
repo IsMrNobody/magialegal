@@ -135,7 +135,7 @@
         const prod = this.producto.portion[id]
         this.chipInfo = prod
         const productPrice = this.producto.price
-        const total = parseInt(productPrice) + prod.price
+        const total = (productPrice + prod.price)
         this.total =  total
       },
       addCart() {

@@ -105,7 +105,7 @@ export const actions = {
     try {
       const pedido = {
         products: state.items,
-        paymentMethod: state.selectedPayment,
+        paymentMethod: state.selectedPayment.type,
         deliveryDate: state.date,
         total: state.total,
         merchantId: rootState.merchant._id,
@@ -115,13 +115,13 @@ export const actions = {
       const order = await sendOrder(pedido)
       // console.log(pedido)
       if (order.data.email) {
-        if (pedido.paymentMethod === 'Cash') {
+        if (pedido.paymentMethod !== 'Cash') {
+          await commit('verConfirm')
+        } else {
           this.$router.push(`/paid/${order.data._id}`)
           setTimeout(() => {
             commit('setDialog', false)
           }, 3000)
-        } else {
-          await commit('verConfirm')
         }
         commit('resetCar')
         commit('setOrderId', order.data._id)

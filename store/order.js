@@ -1,7 +1,9 @@
 import {
   getOrders,
   getOrderById,
-  sendComment
+  sendComment,
+  checkOrder,
+  editOrder,
 } from "../plugins/sweetApi"
 
 export const state = () => ({
@@ -33,7 +35,38 @@ export const actions = {
       this.$router.push('/')
     }
   },
+
+  async checkOrder({ dispatch, state }, ref) {
+    try {
+      const id = state.factura._id
+      const check = {
+        check: true,
+        numberRef: ref
+      }
+      const data = await checkOrder(id, check)
+      if (!data._id) throw new Error(data)
+      dispatch('getOrderById', id)
+    } catch (error) {
+      console.log(error.message)
+    }
+  },
   async sendMsg(_ctx, data) {
     await sendComment(data)
-  }
+  },
+
+  async editOrder({ dispatch, state }, set) {
+    try {
+      const payload = {
+        status: set.status,
+        paid: set.paid,
+        id: set.id
+      }
+      console.log(payload)
+      const data = await editOrder(payload)
+      if (data.length) throw new Error(data)
+      dispatch('getOrders')
+    } catch (error) {
+      console.log(error.message)
+    }
+  },
 }

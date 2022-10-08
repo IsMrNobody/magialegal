@@ -71,7 +71,7 @@
                 </v-col>
                 <v-spacer></v-spacer>
                 <v-col class="my-auto text-center">
-                  <p class="text-h6">$ {{ car.totalProduct.toFixed(2) }}</p>
+                  <p class="text-h6">$ {{ car.totalProduct.toFixed(1) }}</p>
                 </v-col>
               </v-row>
             </v-col>

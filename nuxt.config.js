@@ -54,6 +54,11 @@ export default {
     '@nuxtjs/axios',
   ],
 
+  env: {
+    SWEET_API_URL: process.env.SWEET_API_URL,
+    USER_ID: process.env.USER_ID
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 

@@ -4,7 +4,13 @@
       <h3>Historial de Pedidos {{ ordenes.length }}</h3>
       <v-btn text @click="getData()">Actualizar</v-btn>
     </v-col>
-    <v-expansion-panels>
+    <v-progress-circular
+      v-if="!ordenes.length"
+      :size="50"
+      color="amber"
+      indeterminate
+    ></v-progress-circular>
+    <v-expansion-panels v-else>
       <v-expansion-panel v-for="(item, i) in ordenes" :key="i" class="marron">
         <v-expansion-panel-header v-if="item.active">
           <h3
@@ -79,6 +85,13 @@
                     </v-list-item-content>
                   </v-list-item>
 
+                  <v-list-item v-if="item.numberRef">
+                    <v-list-item-content>Number Ref:</v-list-item-content>
+                    <v-list-item-content class="align-end">
+                      {{ item.numberRef }}
+                    </v-list-item-content>
+                  </v-list-item>
+
                   <v-list-item>
                     <v-list-item-content>C/Products:</v-list-item-content>
                     <v-list-item-content class="align-end">
@@ -139,9 +152,35 @@
                   </div>
                 </v-list>
                 <v-card-actions>
-                  <v-btn outlined small>Cancelar</v-btn>
+                  <v-btn 
+                    color="red" 
+                    text 
+                    small
+                    :disabled="item.status === 'Cancelado'"
+                    @click="editOrder({status: 'Cancelado', paid: false, id: item._id})"
+                  >
+                    Cancelar
+                  </v-btn>
                   <v-spacer></v-spacer>
-                  <v-btn outlined small color="green">Entregado</v-btn>
+                  <v-btn
+                    :disabled="item.paid === true"
+                    color="yellow"
+                    outlined
+                    small
+                    @click="editOrder({status: 'Pendiente', paid: true, id: item._id})"
+                  >
+                    Pagado
+                  </v-btn>
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    :disabled="item.status === 'Entregado'"
+                    color="green"
+                    outlined
+                    small
+                    @click="editOrder({status: 'Entregado', paid: true, id: item._id})"
+                  >
+                    Entregado
+                  </v-btn>
                 </v-card-actions>
               </v-card>
             </v-col>
@@ -153,7 +192,7 @@
                       C/Product:
                       <span class="yellow--text">{{ pro.cantidad }}</span>
                     </p>
-                    <p class="grey--text">{{ pro.name }}</p>
+                    <p class="primary--text">{{ pro.name }}</p>
                     <p>Portion: {{ pro.selectedPortion[0].title }}</p>
                     <p>
                       Total : $
@@ -192,6 +231,9 @@ export default {
     },
     getData() {
       this.$store.dispatch('order/getOrders')
+    },
+    editOrder(status) {
+      this.$store.dispatch('order/editOrder', status)
     },
   },
 }

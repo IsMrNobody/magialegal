@@ -31,7 +31,10 @@
     </v-card-text>
 
     <v-list-item>
-      <v-list-item-icon>
+      <v-list-item-icon v-if="order.status === 'Entregado'">
+        <v-icon color="green">mdi-check</v-icon>
+      </v-list-item-icon>
+      <v-list-item-icon v-else>
         <v-icon>mdi-clock</v-icon>
       </v-list-item-icon>
       <v-list-item-subtitle>{{ order.status }}</v-list-item-subtitle>
@@ -45,6 +48,32 @@
         <v-icon color="green">mdi-check</v-icon>
       </v-list-item-icon>
       <v-list-item-subtitle>{{ order.paymentMethod }}</v-list-item-subtitle>
+    </v-list-item>
+
+    <v-list-item v-if="order.paymentMethod !== 'Cash'">
+      <v-list-item-icon v-if="order.numberRef">Ref:</v-list-item-icon>
+      <v-list-item-subtitle v-if="order.numberRef">{{ order.numberRef }}</v-list-item-subtitle>
+
+      <v-col v-else>
+        <v-row>
+          <v-text-field
+            v-model="ref"
+            :disabled="order.paid"
+            label="Number Ref."
+          >
+          </v-text-field>
+          <v-spacer></v-spacer>
+          <v-btn
+            outlined
+            color="primary"
+            class="my-auto"
+            :disabled="order.paid"
+            @click="checkOrder"
+          >
+            check order
+          </v-btn>
+        </v-row>
+      </v-col>
     </v-list-item>
     <!-- <v-slider
       v-model="time"
@@ -77,7 +106,7 @@
     <v-divider></v-divider>
 
     <v-card-actions class="accent darken-2">
-      <v-btn text color="green" class="mx-auto">
+      <v-btn text color="green" class="mx-auto" @click="contactar">
         Contact
         <v-icon>mdi-whatsapp</v-icon>
       </v-btn>
@@ -89,7 +118,8 @@
   export default {
     data () {
       return {
-        labels: ['WAIT', 'GO', 'FINISH']
+        labels: ['WAIT', 'GO', 'FINISH'],
+        ref: ''
       }
     },
     computed: {
@@ -97,8 +127,23 @@
         return this.$store.state.order.factura
       }
     },
-    created() {
+    async created() {
       this.$store.dispatch('order/getOrderById', this.$route.params.id)
+      this.$store.dispatch('setMerchant')
+      this.ref = await this.order.numberRef
+    },
+    methods: {
+      checkOrder() {
+        const ref = this.ref
+        this.$store.dispatch('order/checkOrder', ref)
+      },
+      contactar() {
+        const phone = 584128352365
+        const data = {
+          text: `Nuevo pedido # ${this.order._id}`
+        }
+        window.open(`https://wa.me/${phone}?text=${data.text}`)
+      }
     }
   }
 </script>
