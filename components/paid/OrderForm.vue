@@ -125,6 +125,9 @@
     computed: {
       order() {
         return this.$store.state.order.factura
+      },
+      phone() {
+        return this.$store.state.merchant.phone
       }
     },
     async created() {
@@ -138,9 +141,9 @@
         this.$store.dispatch('order/checkOrder', ref)
       },
       contactar() {
-        const phone = 584128352365
+        const phone = this.phone
         const data = {
-          text: `Nuevo pedido # ${this.order._id}`
+          text: `Nuevo pedido numero ${(this.order._id).substr(14)}`
         }
         window.open(`https://wa.me/${phone}?text=${data.text}`)
       }

@@ -50,7 +50,7 @@
               <v-row v-for="(car, i) in carrito" :key="i">
                 <v-col sm="3" cols>
                   <v-card width="auto" height="300" elevation="10">
-                    <v-img height="100%" :src="car.img"></v-img>
+                    <v-img height="100%" :src="car.img.url"></v-img>
                   </v-card>
                 </v-col>
                 <v-col class="my-auto" sm="3" cols>

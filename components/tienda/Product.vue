@@ -16,7 +16,7 @@
         >
           <v-img
             height="155"
-            :src="p.img"
+            :src="p.img.url"
           >
             <v-expand-transition>
               <div

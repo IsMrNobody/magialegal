@@ -52,7 +52,7 @@
                 <v-row justify="center">                  
                   <v-col sm="8" cols>
                     <v-card height="200" width="100vw" flat class="mx-auto">
-                      <v-img height="100%" :src="producto.img"></v-img>
+                      <v-img height="100%" :src="producto.img.url"></v-img>
                     </v-card>
                     <v-card-actions class="mt-5">
                       <p class="display-1">
