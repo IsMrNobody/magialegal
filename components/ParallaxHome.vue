@@ -1,13 +1,16 @@
 <template>
   <div>
-    <v-img class="ponke d-none d-sm-flex" src="https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2Fponke.png?alt=media&token=4783d3dd-23ff-4749-89ef-8cc9c3318c0e"></v-img>
+    <v-img class="ponke d-none d-sm-flex" src="https://res.cloudinary.com/dku13l2ep/image/upload/v1674686394/DaniPotter/libro_gapcvp.png"></v-img>
     <v-parallax
         height="300"
         class="parallax"
-        src="https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2Fparallax_2.png?alt=media&token=8d398c2d-854f-45bb-965a-72a9f78697be"
+        src="https://res.cloudinary.com/dku13l2ep/image/upload/v1674683508/DaniPotter/banner_p73apo.png"
     >
       <div class="logo mx-auto">
-        <v-img src="/logo2.png"></v-img>
+        <v-img 
+          width="180"
+          class="mx-auto"
+          src="https://res.cloudinary.com/dku13l2ep/image/upload/v1674683508/DaniPotter/logo-legacy_drylrt.png"></v-img>
       </div>
     </v-parallax>
   </div>

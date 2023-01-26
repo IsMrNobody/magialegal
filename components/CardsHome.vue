@@ -6,7 +6,9 @@
     <v-img
       :src="cards.img"
       height="200px"
-    ></v-img>
+    >
+      <v-img class="mx-auto" width="200" :src="cards.icono"></v-img>
+    </v-img>
 
     <v-card-title>
       {{ cards.title }}

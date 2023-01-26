@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :clipped="clipped"
       class="marronColor"
@@ -23,14 +23,14 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-app-bar
       :clipped-left="clipped"
       fixed
-      color="#EAAC9D"
+      :color="gris"
       app
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
       <!-- <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
@@ -51,35 +51,20 @@
       </v-btn> -->
       <!-- <v-spacer /> -->
       <div class="logoBar">
-        <v-img src="/logo.png"></v-img>
+        <v-img src="https://res.cloudinary.com/dku13l2ep/image/upload/v1674699887/DaniPotter/Magia_Legal_bea1g7.png"></v-img>
+        <!-- <p>Tramites Profesionales</p> -->
       </div>
       <!-- <v-toolbar-title v-text="title" /> -->
       <v-spacer />
       <!-- <v-btn text>About Us</v-btn> -->
-      <v-btn text @click="contacto">Contact</v-btn>
+      <v-btn color="secondary" text @click="contacto">Contacto</v-btn>
     </v-app-bar>
     <v-main class="greenColor">
       <!-- <v-container fluid> -->
         <Nuxt />
       <!-- </v-container> -->
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+    
      <v-footer
         dark
         padless
@@ -90,7 +75,7 @@
           tile
         >
           <v-card-title class="marronColor">
-            <strong class="subheading">Get connected with us on social networks!</strong>
+            <strong class="">Siguenos para dudas y comentarios!</strong>
 
             <v-spacer></v-spacer>
 
@@ -101,14 +86,14 @@
               dark
               icon
             >
-              <v-icon size="24px">
+              <v-icon color="#f5df7b" size="24px">
                 {{ icon }}
               </v-icon>
             </v-btn>
           </v-card-title>
 
-          <v-card-text id="contacta" class="py-2 pink--text text-center rosaColor">
-            {{ new Date().getFullYear() }} — <strong>SWEET JESUS</strong>
+          <v-card-text id="contacta" class="py-2 text-center">
+            {{ new Date().getFullYear() }} — <strong>G.R</strong>
           </v-card-text>
         </v-card>
       </v-footer>
@@ -162,15 +147,18 @@ export default {
   width: 180px;
 }
 .greenColor {
-  background-color: #565D47;
+  background-color: #071622;
 }
 .rosaColor {
-  background-color: #EAAC9D;
+  background-color: #b2dac9;
 }
 .beihgColor {
-  background-color: #EAAC9D;
+  background-color: #f5df7b;
 }
 .marronColor {
-  background-color: #B49C73;
+  background-color: #071622;
+}
+.gris {
+  background-color: grey;
 }
 </style>

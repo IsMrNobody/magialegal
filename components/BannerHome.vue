@@ -1,10 +1,10 @@
 <template>
     <div class="text-center">
-      <v-col class="mb-5" justify="center">
-        <h3 class="tex">Brithday should be special</h3>
-        <h2>Custom orders, decorated cakes, desserts and snacks for your guests.</h2>
+      <div class="mb-5" justify="center">
+        <h3 class="tex">Servicio personalizado</h3>
+        <h2>Consulta cualquier tipo de solicitud de documentos legales</h2>
         <!-- <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi alias nesciunt voluptatum quas asd asdas dasd</h4> -->
-      </v-col>
+      </div>
       <SliderHome />
       <!-- <v-btn outlined class="mt-5" color="pink lighten-3">See more!</v-btn> -->
     </div>

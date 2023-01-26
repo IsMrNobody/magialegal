@@ -1,21 +1,26 @@
 <template>
   <div>
-    <v-img class="banner" src="https://firebasestorage.googleapis.com/v0/b/ssr-webicultores.appspot.com/o/sweet-blessing%2Fbanner.png?alt=media&token=06b59d56-c291-410c-9c94-3227ed6896ed">
-      <v-card class="fix transparent" flat>
+    <v-img class="banner" src="https://res.cloudinary.com/dku13l2ep/image/upload/v1674683508/DaniPotter/banner_p73apo.png">
+      <v-card class="fix transparent mx-auto" flat>
         <!-- <h1>The Taste of Your Celebrations</h1> -->
-        <img width="90%" src="/logo.png" alt="">
-        <h2 class="beige--text spaci">{{ merchant.name }}</h2>
-        <v-btn color="#EAAC9D" to="/store" class="mt-5">See More</v-btn>
+        <img width="70%" :src="merchant.logo" alt="">
+        <v-col>
+          <h2 class="beige--text spaci">Tramites legales con algo de magia</h2>
+        </v-col>
+        <v-btn outlined color="#f5df7b" to="/" class="mt-5">Lumus</v-btn>
       </v-card>
     </v-img>
     <v-container>
       <div class="text-center pad">
           <v-card max-width="700" flat class="transparent mx-auto">
-            <h2 class="siz">Custom-made Cake</h2>
-            <p class="display-1">Guests of your holiday will be delighted</p>
+            <h2 class="siz">Asesoría Legal</h2>
+            <p class="">
+              Gestiona y organiza tus documentos para hacer tus solicitudes
+              con exito y sin perdida de tiempo
+            </p>
           </v-card>
         <v-row justify="center">
-          <v-col v-for="(card, i) in cards" :key="i" class="" sm="4" cols>
+          <v-col v-for="(card, i) in cards" :key="i" sm="4" cols>
             <CardsHome :cards="card" />
           </v-col>
         </v-row>
@@ -27,10 +32,11 @@
         <BannerHome class="mb-12" />
       </div>
       <v-row justify="center" class="contacto">
-        <v-col class="my-auto mt-5" sm="5">
+        <v-col class="my-auto" sm="5">
           <v-img
-            width=""
-            src="https://img.freepik.com/free-photo/frame-food-ingredients-baking-gently-pink-pastel-background-cooking-flat-lay-with-copy-space-top-view-baking-concept-flat-lay_127032-2200.jpg?w=2000">
+            width="250"
+            class="mx-auto"
+            src="https://res.cloudinary.com/dku13l2ep/image/upload/v1674694261/DaniPotter/buho_hrcn3r.png">
           </v-img>
         </v-col>
         <Contact class="ml-5" />
@@ -45,19 +51,22 @@ export default {
     return {
       cards: [
         {
-          title: 'Cakes',
-          subtitle: 'The best cake in the area',
-          img: 'https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2Ftorta01.png?alt=media&token=5011705f-40eb-472b-a55d-27bf33b57e02'
+          title: 'SAIME',
+          subtitle: 'Gestion y apoyo en recolección de documentos',
+          icono: 'https://res.cloudinary.com/dku13l2ep/image/upload/v1674687214/DaniPotter/libro-sombrero_avraqi.png',
+          img: 'https://res.cloudinary.com/dku13l2ep/image/upload/v1674686522/DaniPotter/card_jqbqgq.png'
         },
         {
-          title: 'Lunch',
-          subtitle: 'Puff pastries, stuffed croissanst, tequeños',
-          img: 'https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2Flunch.png?alt=media&token=c29e28c6-06d9-47f5-8880-e602aa041820'
+          title: 'INTT',
+          subtitle: 'Gestion y apoyo en recolección de documentos',
+          icono: 'https://res.cloudinary.com/dku13l2ep/image/upload/v1674695999/DaniPotter/book0_nzr9ea.png',
+          img: 'https://res.cloudinary.com/dku13l2ep/image/upload/v1674686522/DaniPotter/card_jqbqgq.png'
         },
         {
-          title: 'Donuts',
-          subtitle: 'Donuts filled with the best flavors',
-          img: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80'
+          title: 'Apostilla',
+          subtitle: 'Indicacion y observaciones para poder apostillar',
+          icono: 'https://res.cloudinary.com/dku13l2ep/image/upload/v1674695999/DaniPotter/cartas0_t7bd8i.png',
+          img: 'https://res.cloudinary.com/dku13l2ep/image/upload/v1674686522/DaniPotter/card_jqbqgq.png'
         }
       ]
     }
@@ -76,9 +85,10 @@ export default {
 
 <style scoped>
 .fix {
-  position: absolute;
+  /* position: absolute;
   top: 10%;
-  left: 10%;
+  left: 10%; */
+  text-align: center;
   max-width: 500px;
   text-transform: uppercase;
 }
@@ -92,6 +102,7 @@ export default {
 }
 .contacto {
   padding-bottom: 80px;
+  margin-top: 180px;
 }
 h1 {
   font-size: 4rem;
@@ -100,17 +111,16 @@ p {
   size: 18px;
 }
 .banner {
-  padding-bottom: 60px;
-  padding-top: 40px;
-  height: 80vh;
+  /* padding-bottom: 60px;
+  padding-top: 40px; */
+  height: 60vh;
   width: 100vw;
 }
 .siz {
   font-size: 35px;
   text-transform: uppercase;
 }
-.spaci {
-  
-  letter-spacing: 18px;
+.spaci {  
+  /* letter-spacing: 18px; */
 }
 </style>

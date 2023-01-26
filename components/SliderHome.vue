@@ -14,10 +14,10 @@
         <v-card
           class="mx-auto pa-2 ml-5 mr-5 transparent"
           flat
-          height="350"
-          width="250"
+          height="auto"
+          max-width="400"
         >
-          <v-img height="350" :src="n.img"></v-img>
+          <v-img height="auto" :src="n.img"></v-img>
         </v-card>
       </v-slide-item>
     </v-slide-group>
@@ -30,22 +30,31 @@
       model: null,
       photos: [
         {
-          img: "https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2Ftorta02.png?alt=media&token=dad75be6-d73b-4a61-ab54-6898a8319b2b"
+          img: "https://res.cloudinary.com/dku13l2ep/image/upload/v1674686774/DaniPotter/Cartas/02_rsfvjs.png"
         },
         {
-          img: "https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2FWhatsApp%20Image%202022-09-18%20at%208.08.07%20PM.jpeg?alt=media&token=ba3689ec-f3f5-43fc-ac7d-d7228f3e7f9a"
+          img: "https://res.cloudinary.com/dku13l2ep/image/upload/v1674686863/DaniPotter/Cartas/03_titghq.png"
         },
         {
-          img: "https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2Ftortas%2Ftres%20leche.jpeg?alt=media&token=59c438eb-2137-45aa-9c7b-918cf647675e"
+          img: "https://res.cloudinary.com/dku13l2ep/image/upload/v1674686863/DaniPotter/Cartas/04_qsp0e9.png"
         },
         {
-          img: "https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2Ftorta02.png?alt=media&token=dad75be6-d73b-4a61-ab54-6898a8319b2b"
+          img: "https://res.cloudinary.com/dku13l2ep/image/upload/v1674686863/DaniPotter/Cartas/05_g5hzzw.png"
         },
         {
-          img: "https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2FWhatsApp%20Image%202022-09-18%20at%208.08.07%20PM.jpeg?alt=media&token=ba3689ec-f3f5-43fc-ac7d-d7228f3e7f9a"
+          img: "https://res.cloudinary.com/dku13l2ep/image/upload/v1674686863/DaniPotter/Cartas/06_wtl2qx.png"
         },
         {
-          img: "https://firebasestorage.googleapis.com/v0/b/eden-d8ccb.appspot.com/o/Sweet%20Jesus%2Ftortas%2Ftres%20leche.jpeg?alt=media&token=59c438eb-2137-45aa-9c7b-918cf647675e"
+          img: "https://res.cloudinary.com/dku13l2ep/image/upload/v1674686863/DaniPotter/Cartas/07_ojgoaz.png"
+        },
+        {
+          img: "https://res.cloudinary.com/dku13l2ep/image/upload/v1674686863/DaniPotter/Cartas/08_ynlspd.png"
+        },
+        {
+          img: "https://res.cloudinary.com/dku13l2ep/image/upload/v1674686863/DaniPotter/Cartas/09_bectpp.png"
+        },
+        {
+          img: "https://res.cloudinary.com/dku13l2ep/image/upload/v1674686863/DaniPotter/Cartas/10_q9w1bn.png"
         }
       ]
     }),

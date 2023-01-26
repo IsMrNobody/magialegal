@@ -7,16 +7,16 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - Sweet Blessing',
-    title: 'Sweet Jesus',
+    titleTemplate: '%s - G.R',
+    title: 'Magia Legal',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'Sweet Jesus', content: 'Sweet Blessing' },
-      { name: 'format-detection', content: 'sweet-blessing' }
+      { hid: 'description', name: 'DaniPotter', content: 'Magia Legal' },
+      { name: 'format-detection', content: 'magia-legal' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -91,10 +91,10 @@ export default {
       themes: {
         dark: {
           primary: '#EAAC9D',
-          beige: '#F0DAA4',
-          marron: '#B49C73',
+          beige: '#f5df7b',
+          marron: '#071622',
           accent: colors.grey.darken3,
-          secondary: '#565D47',
+          secondary: '#b2dac9',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,

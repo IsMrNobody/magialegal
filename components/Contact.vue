@@ -7,7 +7,7 @@
       right
       color="success"
     >
-      <span>Registration successful!</span>
+      <span>Mensaje Enviado!</span>
       <v-icon dark>
         mdi-checkbox-marked-circle
       </v-icon>
@@ -17,7 +17,7 @@
       @submit.prevent="submit"
     >
       <v-container fluid>
-        <p class="primary--text">Send me a message and I will be in contact with you very soon.</p>
+        <p class="secondary--text">Enviame un mensaje con tus dudas y en breve estare en contacto.</p>
         <v-row>
           <v-col
             cols="12"
@@ -26,7 +26,7 @@
             <v-text-field
               v-model="name"
               color="primary"
-              label="Name"
+              label="Nombre"
               required
             ></v-text-field>
           </v-col>
@@ -49,7 +49,7 @@
             >
               <template #label>
                 <div>
-                  Message <small></small>
+                  Mensaje <small></small>
                 </div>
               </template>
             </v-textarea>
@@ -65,10 +65,11 @@
         </v-btn> -->
         <v-spacer></v-spacer>
         <v-btn
-          color="pink lighten-2"
+          outlined
+          color="secondary"
           type="submit"
         >
-          Send
+          Enviar
         </v-btn>
         <v-spacer></v-spacer>
       </v-card-actions>
