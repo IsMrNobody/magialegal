@@ -95,7 +95,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'SWEET JESUS'
+      title: 'Magia Legal'
     }
   },
   methods: {

@@ -89,7 +89,7 @@
           </v-card-title>
 
           <v-card-text id="contacta" class="py-2 pink--text text-center rosaColor">
-            {{ new Date().getFullYear() }} — <strong>SWEET JESUS</strong>
+            {{ new Date().getFullYear() }} — <strong>Magia Legal</strong>
           </v-card-text>
         </v-card>
       </v-footer>
@@ -127,7 +127,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'SWEET JESUS'
+      title: 'Magia Legal'
     }
   },
   methods: {

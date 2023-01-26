@@ -5,7 +5,7 @@
         <v-img width="300" class="mx-auto" src="/sweet.png"></v-img>
         <!-- <h2>{{ merchant.name }}</h2> -->
         <h4>{{ merchant.description }}</h4>
-        <p>@sweetjesus</p>
+        <p>@</p>
         <!-- <v-btn color="pink">Buy</v-btn> -->
       </v-card>
     </v-img>
