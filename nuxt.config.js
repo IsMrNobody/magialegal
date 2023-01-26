@@ -30,10 +30,10 @@ export default {
   loading: { color: '#EAAC9D' },
 
   manifest: {
-    name: 'Sweet Jesus',
-    short_name: 'Sweet',
-    background_color: '#565D47',
-    theme_color: '#EAAC9D',
+    name: 'Magia Legal ',
+    short_name: 'G.R',
+    background_color: '#EAAC9D',
+    theme_color: '#b2dac9',
     display: "fullscreen",
     icons: [
       {
